@@ -11,11 +11,21 @@ module.exports = function (grunt) {
                     cleanTargetDir: false
                 }
             }
+        },
+        compass: {
+            production: {
+                options: {
+                    config: "~/Configuration/compass-config.rb"
+                }
+            }
+
         }
     });
 
     // This command registers the default task which will install bower packages into wwwroot/lib
     grunt.registerTask("default", ["bower:install"]);
+
+    grunt.registerTask("compass")
 
     // The following line loads the grunt plugins.
     // This line needs to be at the end of this this file.
